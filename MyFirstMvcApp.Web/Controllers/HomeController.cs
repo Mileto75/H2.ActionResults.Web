@@ -39,6 +39,26 @@ namespace MyFirstMvcApp.Web.Controllers
         {
             return View();
         }
+        public IActionResult Info(int id)
+        {
+            return Content($"You asked for info on id:{id}");
+        }
+        public IActionResult SearchById(int id)
+        {
+            return Content($"You asked for info on id:{id}");
+        }
+        public IActionResult Search(string category, decimal maxPrice)
+        {
+            return Content($"You asked for info on category:{category} and maxprice:{maxPrice}");
+        }
+        public IActionResult SearchByString(string needle)
+        {
+            return Content($"You asked for text with needle:{needle}");
+        }
+        public IActionResult ShowText(string text)
+        {
+            return Content($"this is your text:{text}");
+        }
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

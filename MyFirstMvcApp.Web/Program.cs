@@ -19,7 +19,26 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
-
+app.MapControllerRoute(
+    name: "searchbyid",
+    pattern: "search/{id:int}",
+    defaults: new { Controller = "Home", Action = "SearchById" }
+    );
+app.MapControllerRoute(
+    name: "searchbycategorymaxprice",
+    pattern: "home/{category}/{maxprice}/search",
+    defaults: new { Controller = "Home", Action = "Search" }
+    );
+app.MapControllerRoute(
+    name: "searchbytext",
+    pattern: "search/{needle}",
+    defaults: new { Controller = "Home", Action = "SearchByString" }
+    );
+app.MapControllerRoute(
+    name: "showtext",
+    pattern: "home/showtext/{text}",
+    defaults: new {Controller = "Home", Action = "ShowText" }
+    );
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");

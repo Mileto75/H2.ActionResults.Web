@@ -10,6 +10,10 @@ namespace MyFirstMvcApp.Web.Controllers
         {
             _webHostEnvironment = webHostEnvironment;
         }
+        public IActionResult Index()
+        {
+            return Content("Index");
+        }
 
         public IActionResult Fail()
         {
